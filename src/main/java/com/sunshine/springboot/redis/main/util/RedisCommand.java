@@ -72,4 +72,7 @@ public class RedisCommand {
     public static Map hgetAll(String key){
         return stringRedisTemplate.opsForHash().entries(key) ;
     }
+    public static boolean del(String key){
+        return stringRedisTemplate.delete(key) ;
+    }
 }
