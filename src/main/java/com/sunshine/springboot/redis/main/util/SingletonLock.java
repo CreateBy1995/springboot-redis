@@ -45,7 +45,7 @@ public class SingletonLock {
         // 过期的一瞬间线程2执行setnx成功 也设置了一个key 由于加锁的方法是同一个 也就是key是一样的
         // 所以此时线程1调用del删除的将会是线程2设置好的key 从而锁失效
 
-        // 但是由于此处连接的是redis集群  集群不支持lua脚本 需要自己通过slot获取对应的原生的jedis连接 所以就不测试了
+        // 但是由于此处连接的是redis集群  集群默认不支持lua脚本 需要自己通过slot获取对应的原生的jedis连接 所以就不测试了
         // lua脚本中的命令和此段java命令是一致的，只是说lua脚本在redis中执行具有原子性
         if(RedisCommand.get(key).equals(nameThreadLocal.get())){
             System.out.println("当前线程--"+nameThreadLocal.get()+"---解锁");

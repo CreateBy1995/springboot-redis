@@ -12,7 +12,7 @@ import org.springframework.util.StringUtils;
 public class RedisRequestAspect {
     // 表示com.sunshine.springboot.redis.main.handler包下的RedisController类中的所有方法，".."表示所有方法中的参数不限个数
     // check 表示切点名
-    @Pointcut("execution(public * com.sunshine.springboot.redis.main.handler.RedisController.*(..))")
+    @Pointcut("execution(public * com.sunshine.springboot.redis.main.handler.JedisController.*(..))")
     public void check() {
 
     }

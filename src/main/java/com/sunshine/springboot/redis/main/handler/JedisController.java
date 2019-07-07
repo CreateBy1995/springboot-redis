@@ -3,6 +3,7 @@ package com.sunshine.springboot.redis.main.handler;
 import com.sunshine.springboot.redis.main.util.HttpCode;
 import com.sunshine.springboot.redis.main.util.RedisCommand;
 import com.sunshine.springboot.redis.main.util.BloomFilterUtil;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,8 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 测试jedis的客户端封装的redis命令
+ */
 @RestController
-public class RedisController {
+public class JedisController {
     @GetMapping("/get")
     public String get(String key){
         return RedisCommand.get(key);

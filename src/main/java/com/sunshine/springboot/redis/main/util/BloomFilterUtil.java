@@ -8,6 +8,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
+/**
+ * 布隆过滤器
+ */
 public class BloomFilterUtil {
     // 由于单个布隆过滤器的容量可能不够 所以可能有多个过滤器
     private static List<BloomFilter> filterLists = new ArrayList<>() ;
